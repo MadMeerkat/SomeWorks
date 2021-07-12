@@ -1,0 +1,257 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obligatorio TDDM</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="./assets/estilos/main.css">
+
+    <link rel="stylesheet" href="./assets/estilos/main.css">
+    <!--Script que el proyecto cordova se encargará de enlazar al proyecto cuando lo construyamos-->
+    <script src="cordova.js"></script>
+</head>
+
+<body>
+    <!--MODAL-->
+    <ons-modal id="spinnerModal">
+        <div style="text-align: center;">
+            <p>
+                <ons-icon icon="md-spinner" size="28px" spin></ons-icon>
+            </p>
+        </div>
+    </ons-modal>
+    <!--Componente:navegador-->
+    <ons-navigator swipeable id="myNavigator" page="login.html"></ons-navigator>
+
+    <!--Template:Login-->
+    <template id="login.html">
+        <ons-page id="login">
+            <div id="loginDiv" style="text-align: center;">
+                <div class="titleDiv">
+                    <p class="sectionTitle">Login</p>
+                </div>
+
+                <div class="formContainer">
+                    <p class="pInput">
+                        <ons-input id="txtEmail" class="inputs text-inputs" placeholder="Correo Electronico" float>
+                        </ons-input>
+                    </p>
+                    <p class="pInput">
+                        <ons-input id="txtPassword" class="inputs text-inputs" type="password" placeholder="Password"
+                            float>
+                        </ons-input>
+                    </p>
+                    <p>
+                        <ons-button id="btnLogin" onclick="userLogin()">Iniciar Sesion</ons-button>
+                    </p>
+                    <span class="loginDisclaimer">
+                        No tengo cuenta, <ons-button id="btnGoRegistro" class="btnLink" modifier="quiet"
+                            onclick="btnGoRegistro()">Quiero Registrarme!</ons-button>
+                    </span>
+                </div>
+
+                <div class="divFoot">
+                    <p><span>App creada por:</span> Alexis Amoroso 221736 / Martina Olivera 255807</p>
+                </div>
+            </div>
+        </ons-page>
+    </template>
+
+
+    <!--Template:Registro-->
+    <template id="registro.html">
+        <ons-page id="registro">
+            <div id="registerDiv">
+                <div class="titleDiv">
+                    <p class="sectionTitle">Registro de usuario</p>
+                </div>
+
+                <div class="formContainer">
+                    <p class="pInput">
+                        <ons-input id="txtNombre" class="inputs" placeholder="Nombre*" float></ons-input>
+                    </p>
+                    <p class="pInput">
+                        <ons-input id="txtApellido" class="inputs" placeholder="Apellido*" float></ons-input>
+                    </p>
+                    <p class="pInput">
+                        <ons-input id="txtDireccion" class="inputs" placeholder="Dirección*" float> </ons-input>
+                    </p>
+                    <p class="pInput">
+                        <ons-input type="number" id="txtNroPuerta" class="inputs" placeholder="Numero de Puerta*" float>
+                        </ons-input>
+                    </p>
+                    <p class="pInput">
+                        <ons-input id="txtEmailRegistro" class="inputs" placeholder="Email*" float></ons-input>
+                    </p>
+                    <p class="pInput">
+                        <ons-input id="txtPasswordRegistro" class="inputs" placeholder="Password*" float></ons-input>
+                    </p>
+                    <p class="pDisclaimer">Los campos marcados con * son Obligatorios !
+                    <p>
+                    <p>
+                        <ons-button id="btnRegistro" onclick="btnRegistro()">Registrarme</ons-button>
+                    </p>
+                    <span>
+                        <ons-button id="btnIrALogin" class="btnLink" modifier="quiet" onclick="btnGoLogin()">Volver al
+                            Login</ons-button>
+                    </span>
+                </div>
+            </div>
+        </ons-page>
+    </template>
+
+    <!--Template:Home-->
+    <template id="home.html">
+        <ons-page id="homePage">
+            <ons-tabbar swipeable position="bottom">
+                <ons-tab page="catalogo.html" label="Catalogo" icon="fa-store">
+                </ons-tab>
+                <ons-tab page="pedidos.html" label="Pedidos" icon="fa-receipt">
+                </ons-tab>
+                <ons-tab page="favs.html" label="Favoritos" icon="fa-star">
+                </ons-tab>
+                <ons-tab label="Logout" icon="fa-sign-out-alt" onclick="btnLogout()">
+                </ons-tab>
+            </ons-tabbar>
+        </ons-page>
+    </template>
+
+    <template id="catalogo.html">
+        <ons-page id="catalogo">
+            <script>
+                ons.getScriptPage().onShow = cargarCatalogo;
+            </script>
+            <div class="titleDiv">
+                <p class="center pTitle">
+                    <ons-icon icon="fa-store"></ons-icon>Catalogo de productos
+                </p>
+            </div>
+            <div id="searchDiv">
+                <p style="text-align: center; margin-top: 10px;">
+                    <ons-search-input placeholder="Filtrar catalogo" onchange="filtrarCatalogo(this.value)">
+                    </ons-search-input>
+                </p>
+                <a onclick="goScanQR()">
+                    <p class="pQR">Escanear QR<ons-icon icon="fa-qrcode" class="list-item__icon fa-qrcode"></ons-icon>
+                    </p>
+                </a>
+            </div>
+            <div id="listDiv">
+
+            </div>
+        </ons-page>
+    </template>
+
+    <template id="favs.html">
+        <ons-page id="favs">
+            <script>
+                ons.getScriptPage().onShow = cargoFavoritos;
+            </script>
+            <div class="titleDiv">
+                <p class="center pTitle">
+                    <ons-icon icon="fa-star"></ons-icon>Mis Favoritos
+                </p>
+            </div>
+            <div id="favlistDiv">
+
+            </div>
+        </ons-page>
+    </template>
+
+    <template id="pedidos.html">
+        <ons-page id="pedidos">
+            <script>
+                ons.getScriptPage().onShow = cargarListaPedidos;
+            </script>
+            <div class="titleDiv">
+                <p class="center pTitle">
+                    <ons-icon icon="fa-receipt"></ons-icon>Mis pedidos
+                </p>
+            </div>
+
+            <div id="listaPedidosDiv">
+            </div>
+        </ons-page>
+    </template>
+
+    <template id="detalleProducto.html">
+        <ons-page id="detalle-producto">
+            <script>
+                ons.getScriptPage().onShow = cargarDetalleCatalogo;
+            </script>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button></ons-back-button>
+                </div>
+                <div class="center">Producto</div>
+            </ons-toolbar>
+            <div id="divDetalleProducto">
+
+            </div>
+            <div id="divComprar">
+
+            </div>
+            <div style="padding: 6%;">
+                <div id="mapid" style="height: 300px;"></div>
+            </div>
+        </ons-page>
+    </template>
+
+    <template id="offline.html">
+        <ons-page id="offline">
+         
+          <div style="height: 100%; display: flex;">
+            <img src="./assets/img/no-internet.png" style="width: 75%; display: block; margin: auto;">
+          </div>
+  
+          
+        </ons-page>
+    </template>
+
+    <template id="scanQR.html">
+        <ons-page id="scanQR">
+            <script>
+                ons.getScriptPage().onInit = escanear;
+
+                //además, sobreescribo el comportamiento del botón "ir para atrás" de esta pantalla
+                //para que se escondar el scanner y se blanquee el textoScanneado
+                document.querySelector('#back-scan').onClick = function() {
+                    console.log('volviendo....')
+                    if(window.QRScanner) {
+                        window.QRScanner.hide();
+                    }
+                    textoScanner = '';
+                    myNavigator.popPage({data: {scanText: ''}})
+                }
+            </script>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button id="back-scan"></ons-back-button>
+                </div>
+                <div class="center">
+                    Scan
+                </div>
+            </ons-toolbar>
+            <div style="height: 100%; display: flex;">
+                <img src="./assets/img/qrcode.png" style="width: 75%; display: block; margin: auto;">
+            </div>
+        </ons-page>
+    </template>
+
+    <script src="./assets/js/jquery.js"></script>
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/libreria.js"></script>
+
+</body>
+
+</html>

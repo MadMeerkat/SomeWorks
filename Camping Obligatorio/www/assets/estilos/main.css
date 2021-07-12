@@ -1,0 +1,343 @@
+/*----- GENERALIDADRES -------*/
+
+*{
+    margin: 0 auto;
+}
+
+:root {
+    --verde: #43af69;
+    --gris: #f8f8f8;
+    --error: #f34f4f;
+}
+
+.center{
+    text-align: center;
+}
+
+.pInput{
+    margin: 0px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    font-weight: 250;
+    padding: 20px 0px 15px 0px;
+}
+
+.titleDiv{
+    width: 80%;
+    padding: 1rem 0rem 1.5rem 0rem;
+    text-align: left;   
+}
+
+.sectionTitle{
+    font-weight: 300;
+    font-size: 2.2rem;
+    padding: 10px;
+    border-left: 2px solid var(--verde);
+    color: #fff;
+}
+
+.pTitle{
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.pTitle-icon{
+    padding-right: 0.1rem;
+}
+.formContainer{
+    position: relative;
+    width: 80%;
+    padding: 10px;
+    background-color:#00000096;
+    border-radius: 8px;
+}
+
+.inputs{
+    border-bottom: 1px solid var(--verde);
+    color: var(--gris);
+}
+
+input[type=number],input[type=text],input[type=password]{
+    color: var(--gris);
+}
+
+
+
+.text-inputs::placeholder{
+    color: var(--gris);
+    font-size: 14px;
+    display: block;
+}
+
+.btnLink{
+    color: var(--verde);
+    padding: 10px 0px 10px 0px;
+}
+
+.pDisclaimer{
+    color: #fff;
+    font-size: 12px;
+    font-style:italic;
+    font-weight: 600;
+}
+
+#errorAlert{
+    position: absolute;
+    top: 0px;
+    padding:10px 0px 10px 0px;
+    width: 100%;
+    background-color:var(--error);
+}
+
+#errorAlert p{
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+#successAlert{
+    position: absolute;
+    top: 0px;
+    padding:10px 0px 10px 0px;
+    width: 100%;
+    background-color: var(--verde);
+    z-index: 200;
+}
+
+#successAlert p{
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.imgCatalogos{
+    width: 100%;
+    padding: 10px;
+}
+
+.imgNotFound{
+    width:80%;
+    display: block;
+    margin: auto;
+    padding-bottom: 10px;
+}
+/*------- FIN GENERALIDADES --------*/
+
+/*-------  --------*/
+
+#loginDiv{
+    background-image: url('../img/login.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    text-align: center;
+}
+
+#btnLogin{
+    background-color: var(--verde);
+    margin: 20px 0px 5px 0px;
+}
+
+.loginDisclaimer{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.divFoot{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    padding-bottom: 12px;
+}
+.divFoot span{
+    color: #fff;
+    font-size: 0.7rem;
+}
+
+.divFoot p{
+    color: var(--verde);
+    font-size: 0.7rem;
+    text-align: center;
+    
+}
+/*------- FIN LOGIN --------*/
+
+/*------- REGISTRO --------*/
+
+#btnRegistro{
+    background-color: var(--verde);
+    margin-top: 20px;
+}
+
+#registerDiv{
+    background-image: url('../img/registroImg.jpg');
+    background-attachment: fixed;
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+/*------- FIN REGISTRO --------*/
+
+/*--------- CATALOGO ----------*/
+.product-card{
+    border-bottom: 1px solid var(--verde);
+    padding-bottom: 0.5rem;
+}
+
+.fa-dollar-sign{
+    color: var(--verde);
+    font-size: 18px;
+    padding-left: 0px;
+}
+
+.pCodigo{
+    text-align: left;
+    color: rgb(131, 131, 131);
+    font-size: 10px;
+    font-weight: 200;
+}
+
+.pDetalle{
+    text-align: left;
+    color: rgb(131, 131, 131);
+    font-size: 15px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.pPrice{
+    text-align: left;
+    padding-top: 0.4rem;
+    font-weight: 200;
+}
+
+.pNombre{
+    font-weight: 600;
+    text-align: left;
+}
+
+.pStock{
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--verde);
+}
+
+.pSucursal{
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: left;
+    color: rgb(131, 131, 131);
+
+}
+
+.storeIcon{
+    color: var(--verde);
+    font-size: 16px;
+    padding-left: 0px;
+}
+
+#searchDiv{
+width: 90%;
+display: block;
+}
+
+
+
+.pQR{
+    width: 90%;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--verde);
+}
+
+.fa-qrcode{
+    color: var(--verde);
+}
+/*------- FIN CATALOGO --------*/
+
+
+
+/*PISANDO ESTILOS POR DEFECTO*/
+
+.text-input--material{
+    background-image: none;
+}
+
+.text-input--material:focus {
+    background-image: none;
+    animation:none;
+}
+
+.text-input--material__label--active {
+    color: var(--verde);
+}
+
+.tabbar--material__button{
+    color:#bed8d0;
+}
+
+:checked+.tabbar__button{
+    color: var(--verde);
+}
+
+#pedir,#calcular{
+    background-color: #43af69;
+    margin-top: 10px;
+}
+
+#sucOpcion{
+    padding-top: 15px;
+}
+
+#estiloPrecio input[type=number]{
+color: #000;
+border-bottom: 1px solid var(--verde);
+}
+
+.back-button--material__icon{
+    fill: var(--verde);
+}
+
+/*regla css para la página del scanner*/
+#scanQR .page__content.page--material__content, #scan-page .page__background.page--material__background {
+    background-color: transparent !important;
+    
+}
+
+.etiquetaSpan{
+    font-size: 14px;
+    padding-right: 5px;
+    color: #838383;
+}
+.tagsicon{
+    color: var(--verde);
+
+}
+
+.fa-tags{
+    font-size: 12px;
+}
+
+.alert-dialog-content input[type=text]{
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.alert-dialog-title{
+    visibility: hidden;
+}
+
+.alert-dialog-title::after{
+    content: 'Agregar comentario';
+    visibility: visible;
+}
