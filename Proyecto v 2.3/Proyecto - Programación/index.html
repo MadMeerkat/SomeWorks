@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef Blog</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="img/fonts/style.css">
+</head>
+
+<body>
+
+  <!--En el menu: A cada opcion se le asigna una clase="btn admin user" / btn porque es un boton / admin porque el admin puede acceder / user porque el usario puede acceder-->
+  <!--En el menu: cada opcion del menu lleva  id="idx", nomenclatura en base a que seccion va mostrar-->
+  <div id="contenedor">
+    <div id="cabezal" class="clearfix">
+      <img id="logo" src="http://chefblog.develotion.com/logochef.png" alt="logo">
+      <ul id="navPrincipal">
+        <li id="btnSeccionHome" class="btn admin colaborador user ">
+          <a>Inicio</a>
+        </li>
+        <li id="btnSeccionPublicar" class="btn colaborador admin">
+          <a>Publicar Receta</a>
+        </li>
+        <li id="btnSeccionReporte" class="btn admin ">
+          <a>Reporte</a>
+        </li>
+        <li id="btnSeccionGestion" class="btn admin">
+          <a>Gestión</a>
+        </li>
+      </ul>
+
+      <!--Se le asigna un id a la a etiqueta <a> para cambiar el texto dependiendo si estas loguedo o no-->
+      <div id="aux">
+        <span id="onUserName"></span> | <a id="btnSeccionLogin" class="btn admin colaborador user">Login</a>
+      </div>
+      <!-- FIN AUX 
+    FIN CABEZAL -->
+    </div>
+
+    <!-- BUSCADOR-->
+    <div id="contenido">
+      <div id="buscador">
+        <input type="text" id="txtBusqueda" placeholder="Ingrese su busqueda..."><a id="btnSeccionBusqueda"
+          class="btn user admin colaborador"><span class="icon-search search-nav"></span><span
+            class="search-nav search-txt">Buscar</span></a>
+
+      </div>
+      <!--FIN BUSCADOR -->
+
+
+      <!--Busquedas encontradas-->
+
+      <div id="seccionBusqueda" class="seccion">
+
+      </div>
+      <!--FIN BUSQUEDAS ENCONTRADAS-->
+
+
+      <!--Login-->
+      <div id="seccionLogin" class="seccion">
+        <h3>Iniciar Sesión</h3>
+        <label for="txtUsuario"></label>
+        <input type="text" id="txtUsuario" placeholder="Usuario"><br>
+        <label for="txtContrasena"></label>
+        <input type="password" id="txtContrasena" placeholder="Contraseña"><br>
+        <label for="btnIniciarSesion"></label>
+        <input type="button" value="Iniciar Sesión" id="btnIniciarSesion">
+        <p id="pruebaIS"></p>
+      </div>
+      <!--Fin Login-->
+      <!--Gestion Colaboradores-->
+      <div id="seccionGestion" class="seccion">
+        <h3>Gestión de colaboradores</h3>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Usuarios</th>
+              <th>Contraseñas</th>
+              <th>Estado</th>
+              <th>Recetas publicadas</th>
+              <th>Rol</th>
+            </tr>
+          </thead>
+          <tbody id="tblGestion">
+
+          </tbody>
+        </table>
+        <hr>
+        <hr>
+
+        <p>Crear usuarios
+        <p>
+          <label for="txtNombreUsuario">Nombre: </label>
+          <input type="text" id="txtNombreUsuario"><br>
+          <label for="txtApellidoUsuario">Apellido: </label>
+          <input type="text" id="txtApellidoUsuario"><br>
+          <label for="slcRol">Rol: </label>
+          <select id="slcRol">
+            <option value="colaborador">Colaborador</option>
+            <option value="admin">Administrador</option>
+          </select><br>
+          <input type="button" value="Crear usuario" id="btnCrearUsuario">
+        <p id="pruebaGestion"></p>
+      </div>
+      <!--FIN Gestion Colaboradores-->
+
+      <!--Reporte -->
+      <div id="seccionReporte" class="seccion">
+        <h3>Reporte de recetas</h3>
+        <p>Escoja Filtro</p>
+        <p>Segun tiempo ingresado:<input type="checkbox" id="chkTiempo" class="chkReportes" onclick="inputEnabled()">
+          <input type="text" id="numReporteTiempo" placeholder="Ingrese tiempo en minutos" disabled></p>
+        <p>Segun mayor Duracion:<input type="checkbox" id="chkDuracion" class="chkReportes"></p>
+        <p>Segun mayor Rendimiento:<input type="checkbox" id="chkRendimiento" class="chkReportes"></p>
+        <input type="button" value="Mostrar" id="btnReportes">
+        <br>
+        <br>
+        <div id="tblTiempo" class="reporte">
+          <h3>Resultado según tiempo ingresado</h3>
+          <p id="resultadoTiempo"></p>
+          <p id="resultadoMasTiempo"></p>
+        </div>
+        <div id="tblDuracion" class="reporte">
+          <h3>Resultado según duración maxima</h3>
+          <table border="1" bordercolor="#edae4" width="450">
+            <thead>
+              <tr>
+                <th>Titulo receta</th>
+                <th>Autor</th>
+                <th>Tiempo</th>
+              </tr>
+            </thead>
+            <tbody id="tblReporteDuracion">
+            </tbody>
+          </table>
+        </div>
+        <div id="tblRendimiento" class="reporte">
+          <h3>Resultado según rendimiento</h3>
+          <table border="1" bordercolor="#edae4" width="450">
+            <thead>
+              <tr>
+                <th>Titulo receta</th>
+                <th>Autor</th>
+                <th>Me gustas</th>
+                <th>No me gustas</th>
+              </tr>
+            </thead>
+            <tbody id="tblReporteRendimiento">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- FIN Reporte-->
+
+      <!--Publicar Receta-->
+      <div id="seccionPublicar" class="seccion">
+        <h3>Publicar receta</h3>
+        <label for="txtTitulo">Título:</label>
+        <input type="text" id="txtTitulo"><br>
+        <label for="txtTiempoReceta">Tiempo elaboración (minutos):</label>
+        <input type="number" id="txtTiempoReceta"><br>
+        <label for="txtElaboracion">Elaboración</label>
+        <textarea id="txtElaboracion" maxlength="150"></textarea><br>
+        <input type="file" id="imgRecetas"><br>
+        <input type="button" value="Publicar receta" id="btnPublicarReceta"><br>
+        <p id="pruebaPublicar"></p>
+        <!--Fin publicar receta-->
+      </div>
+
+      <!-- PAGINA PRINCIPAL?-->
+      <div id="seccionHome" class="seccion">
+        <!-- INICIO RECETA -->
+        <!--DIV generadas en listarRecetasPublicadas-->
+        <!-- FIN RECETA -->
+      </div>
+      <!--FIN PAGINA PRINCIPAL-->
+    </div><!-- FIN CONTENIDO -->
+
+
+
+    <div id="pie">
+      <a href="https://www.freepik.com/free-photos-vectors/logo">Logo vector created by freepik - www.freepik.com</a>
+    </div><!-- FIN PIE -->
+  </div><!-- FIN CONTENEDOR -->
+
+  <!--Librerias y directorios JS-->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/libreria.js"></script>
+  <script src="js/codigo.js"></script>
+
+
+
+
+</body>
+
+</html>

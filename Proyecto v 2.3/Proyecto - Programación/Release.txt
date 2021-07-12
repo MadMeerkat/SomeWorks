@@ -1,0 +1,30 @@
+v1.5
+- Se agrega LOGOUT 
+- Contador de recetas por usuario
+
+v1.6
+- Fix Menu usario erroneo/bloqueado
+- Se agrega Nombre Apellido
+- Se modifica menu inicial (HTML)
+- Se agrega Nombre usuario
+- Contador recetas por usuario
+- Usuarios tienen nombre y apellido
+- Se agrego nombre y apellido a las recetas, no usuario
+
+v1.7
+Deshabilitart habilitar receta a la par de usuario
+validaciones campos vacios publicar receta
+ordenar por colaborador recetas inicio
+
+v1.8
+Se arregla contador recetas
+Se agrega interfaz Reportes
+
+v1.9
+Se agrega campo y logica del input de busqueda
+Se modifica estilos css para el btn de busqueda
+
+v2.0
+Se integro buscador
+Se integro reporte segun tiempo
+Se integro funcion segun duracion
