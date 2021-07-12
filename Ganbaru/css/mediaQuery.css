@@ -1,0 +1,63 @@
+@media screen and (max-width:765px){
+    .mobile-bar{
+        display: block;
+    }
+
+    .web-bar{
+        display: none;
+    }
+
+    a.menu-options:hover:after{
+        transform: scaleX(0);  
+    }
+
+    .option-box{
+        border-left: 3px solid rgb(228, 228, 228);
+        padding-left: 1.2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .option-box:hover{
+        border-left: solid 3px #70d815;  
+        padding-left: 2.7rem;
+    }
+
+    
+
+
+    /*PRIMERA PANTALLA*/
+    #pPrincipal{
+        font-size: 4.0rem;
+        letter-spacing: 0em;
+    }
+
+    .principal-box{
+        padding-left: 25px;
+    }
+
+/*NOSOTROS*/
+#nosotros{
+    padding-left: 10px;
+}
+
+#nosotros .btn{
+    display: block;
+}
+
+/*REDES*/
+    .redes{
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width:480px){
+    /*PRIMERA PANTALLA*/
+
+    #pPrincipal{
+        font-size: 3.1rem;
+        letter-spacing: 0em;
+    }
+
+    
+}
