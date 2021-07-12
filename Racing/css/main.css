@@ -1,0 +1,462 @@
+/* FONT FAMILY 
+font-family: 'Kanit', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+
+/* GENERALIDADES */
+*{
+    margin:0;
+    padding: 0;
+    margin: 0 auto;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.contenido{
+    width: 80%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    overflow: auto;
+}
+
+.subtitulo{
+    font-size: 30px;
+    text-indent: 15px;
+    margin-bottom: 15px;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+fieldset{
+    border: none;
+}
+
+/* HEADER */
+header{
+    background-color: #064420;
+    padding: 15px 0 15px 0;
+}
+
+
+header img{
+    display: block;
+    margin: 0 auto;
+    height: 150px;
+}
+
+
+/* Navbar */
+nav{
+    background-color: #e4efe7;
+}
+
+nav ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;    
+}
+
+nav ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 20px 40px 15px 40px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 800;
+    color: #064420;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    background-color: #064420;
+    color: #fff;
+}
+
+nav ul li a.active{
+    background-color: #064420;
+    color: #fff;
+}
+
+/* SECTION INICIO */
+
+#inicio{
+    background: url(../img/plantel.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:bottom;
+    padding:200px
+}
+
+#inicio h1{
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 1500;
+    color: #fff;
+    background-color: #00000011; /*Esto lo hice para que se vea la letra con el fondo */
+}
+
+#inicio p{
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #00000021; /*Esto lo hice para que se vea la letra con el fondo */
+}
+
+
+/* SECCION NOTICIAS */
+#Noticias article{
+    width: 48%;
+    float: left;
+    margin-right: 2%;
+}
+
+#Noticias article figure img{
+    width: 180px;
+    height: 180px;
+    float: left;
+    padding-right: 2%;
+}
+
+#Noticias h2, #Noticias p{
+    font-family: 'Rubik', sans-serif;
+    text-align: justify;
+}
+
+#Noticias article h2{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#Noticias p{
+    font-size: 14px;
+}
+
+
+#Noticias button{
+    background-color: #064420;
+    color: #fff;
+    margin-top: 15px;
+    padding: 5px 15px 5px 12px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition:all .4s ease-in-out;
+    border: 1px solid #064420;
+}
+
+#Noticias button:hover{
+    background-color: #fff;
+    color: #064420;
+}
+
+span.fa-newspaper{
+    padding-right: 5px;
+}
+
+/* SECCION PLANTELES */
+#Plantel h1{
+    font-family: 'Rubik', sans-serif;
+}
+
+.jugador{
+    width: 16.6%;
+    text-align: center;
+    float: left;
+}
+
+.jugador img{
+    border-radius: 50% 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.jugador h3, .jugador figcaption{
+    font-family: 'Rubik', sans-serif;
+}
+
+.jugador figcaption{
+    font-size: 16px;
+}
+
+.jugador h3{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* SECCION PARTIDOS */
+#Partidos h3{
+    font-size: 22px;
+    font-weight: 800;
+    text-align: justify;
+}
+
+#Fixture,#Next-match{
+    width: 50%;
+    float: left;
+}
+
+#Fixture table{
+    margin: 0px;
+    font-family: 'Rubik', sans-serif;
+    text-align: center
+}
+
+.away{
+    background-color: rgb(218, 218, 218);
+}
+.home{
+    background-color: #e4efe7;
+}
+
+.second-col,.third-col{
+    width: 70%;
+    font-size: 18px;
+    padding: 5px 0px 5px 0px;
+}
+
+.fecha{
+    padding: 10px;
+    font-weight: 800;
+    font-size: 18px;
+    
+}
+
+.fecha span{
+    padding-right: 5px;
+    font-size: 20px;
+    color: #064420;
+}
+
+.first-col{
+    width: 10%;
+    text-align: left;
+}
+
+.racing{
+    font-weight: 600;
+}
+
+#Next-match{
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
+#Next-match figure{
+    width: 50%;
+    float: left;
+}
+
+#Next-match h4, #Next-match p{
+    margin-top: 8px;
+}
+
+#Next-match figure p{
+    padding-right: 5px;
+}
+
+#Next-match figure{
+    margin-bottom: 10px;
+}
+
+#Next-match figure img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50% 50%;
+}
+
+.match{
+    background-color: #e4efe7;
+    padding: 10px 50px 10px 50px;
+    margin-top: 45px;
+}
+
+.match .equipo{
+    font-weight: 800;
+    padding-top: 15px;
+}
+
+.match span{
+    padding-right: 5px;
+    color:#064420;
+}
+
+.disclaimer{
+    font-style: italic;
+    color: rgb(95, 95, 95);
+    font-size: 12px;
+}
+
+/* SECCION GALERIA */
+#Galeria figure{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+#Galeria figure img{
+    width: 80%;
+    height: 250px;
+    border-radius: 5px;
+    filter: grayscale(75%);
+    transition:all .5s ease-in-out;
+}
+
+#Galeria figure img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+#Galeria figcaption{
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 10px;
+    word-spacing: 2px;
+}
+
+
+/* SECCION CONTACTO */
+#Contacto {
+    padding: 20px 200px 20px 200px;
+    background-color:#e4efe7;
+    overflow: auto;
+    
+}
+
+#Contacto h2{
+    text-align: center;
+}
+
+
+span.fa-envelope{
+    padding-right: 5px;
+}
+
+#Contacto form{
+    font-family: 'Rubik', sans-serif;
+    width: 30%;
+}
+
+
+label{
+    padding-left: 10px;
+}
+
+
+input[type=text],input[type=email],select{
+    width: 100%;
+    padding: 8px;
+    font-family: 'Rubik', sans-serif;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border:none;
+}
+
+#type-data{
+    width: 45%;
+    float: left;
+}
+
+#nro-data{
+    margin-left:1%;
+    width: 45%;
+    float: right;
+    text-align: right;
+}
+
+#last-data{
+    width: 100%;
+}
+
+#last-data textarea{
+    display: block;
+    width:100%;
+    resize: none;
+    font-family: 'Rubik', sans-serif;
+    height: 80px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border:none;
+}
+#send-data{
+    padding-top: 10px;
+}
+#newsletter{
+    margin-bottom: 10px;
+}
+
+#send-data input[type=submit]{
+    background-color: #064420;
+    color: #fff;
+    padding: 10px 35px 10px 35px;
+    border: 1px solid #064420;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+    transition:all .5s ease-in-out;
+}
+
+#send-data input[type=submit]:hover{
+    background-color: #fff;
+    color: #064420;
+    border: 1px solid #064420;
+}
+
+
+/* SECCION FOOTER */
+footer{
+    padding: 10px 0px;
+    text-align: center;
+    background-color: #064420;
+}
+
+footer figure a img{
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/*GOUP*/
+#btn-up{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#btn-up a span{
+    text-decoration: none;
+    color: #064420;
+    font-size: 22px;
+    padding: 15px;
+    cursor: pointer;
+    border: 1px solid #064420;
+    border-radius: 5px;
+    background-color:#e4efe7;
+    transition:all .4s ease-in-out;
+}
+
+#btn-up a span:hover{
+    background-color: #fff;
+}
