@@ -1,0 +1,58 @@
+@import url(./main.css);
+@media screen and (max-width:995px) {
+/*NAVBAR*/
+
+/* OPCIONES MENU*/
+.navbar-nav .nav-link {
+    padding: 5px 0px 0px 8px
+}
+
+a.nav-link{
+    margin: 10px 0px 10px 0px;
+    border-left: 2px solid #fff;
+    font-size: 18px;
+    transition: 0.8s;
+}
+
+a.nav-link:hover{
+    border-left: 2px solid var(--yellow) ;
+    padding-left: 14px;
+}
+
+a.nav-link:after{
+    display:none;
+}
+
+/*BANNER*/
+#banner-principal{
+    background-position: center top;
+
+}
+
+}
+
+
+@media screen and (max-width:650px) {
+
+/*BANNER PRINCIPAL*/
+#banner-principal{
+    padding-top: 250px;
+    background-size: auto;
+    background-position-x: 40%;
+    background-position-y: -7%;
+}
+
+#banner-principal h1{
+    font-size: 45px;
+}
+
+/* REDES */
+.redes{
+    top: 80%;
+}
+.redes ul li{
+    display: inline-block;
+    padding: 1rem 0.5rem 1rem 0.5rem;
+
+}
+}
